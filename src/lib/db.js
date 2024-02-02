@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb';
 
-const uri = "mongodb+srv://mihir190801:NowFloats2024@cluster0.kmtwu3t.mongodb.net/sample_airbnb?retryWrites=true&w=majority"
+const uri = process.env.NEXT_PUBLIC_MONGO_URL
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
