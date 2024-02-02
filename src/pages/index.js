@@ -2,10 +2,28 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import { useEffect } from "react";
+import axios from "axios";
 
 const inter = Inter({ subsets: ["latin"] });
 
+
+
 export default function Home() {
+  async function getDbResult(){
+    try{
+
+      let res = await axios.get('/api/hello')
+      console.log(res.data)
+    } catch(e){
+      console.log(e)
+    }
+  }
+  
+  
+  useEffect(() => {
+    getDbResult()
+  },[])
   return (
     <>
       <Head>
